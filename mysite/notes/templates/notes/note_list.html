@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col text-center">
+        <h2 class="fs-2 border-bottom d-inline-block border-3 pb-3 mb-5">My notes</h2>
+    </div>
+</div>
+
+<div class="row ">
+    {% for note in notes %}
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-header">{{ note.title }}</div>
+                <div class="card-body">
+                    <p>{{ note.text|slice:20 }}...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'detail_note' note.pk %}" class="btn btn-sm btn-info">View</a>
+                </div>
+            </div>
+        </div>
+    {%empty%}
+    <div class="col-md-4 mb-5 m-auto">
+        <div class="card p-5 border-2 border-dark">
+            <p>No Note yet! Just Create.</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="confirmation-message">
+                <form class="text-center" action="" method='post'>
+
+                    {% csrf_token %}
+                    <p>Are you sure to delete '{{ note.title }}'</p>
+                    <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

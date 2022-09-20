@@ -1,0 +1,24 @@
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="w-100 d-flex justify-content-between align-items-center">
+        {% if user.is_authenticated %}
+        <div>
+            <a href="" class="fs-3 text-decoration-none" style="color: black;">Note app</a>
+        </div>
+        <div>
+            <a href="{% url 'home' %}" class="btn">Home</a>
+            <a href="{% url 'create_note' %}" class="btn">Create</a>
+            <a href="{% url 'logout' %}" class="btn">Logout</a>
+        </div>
+        {% else %}
+        <div>
+            <a href="" class="fs-3 text-decoration-none" style="color: black;">Note app</a>
+        </div>
+        <div>
+            <a href="{% url 'signup' %}" class="btn">Signup</a>
+            <a href="{% url 'logout' %}" class="btn">Logout</a>
+        </div>
+        {% endif %}
+           
+        </div>  
+    </div>
+</nav> {% endcomment %}
